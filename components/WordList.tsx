@@ -1,39 +1,8 @@
 import styled from 'styled-components';
 import { ReactNode, useState } from 'react';
 
-export default function WordList({ inputWord, count }) {
+export default function WordList({ inputWord, count,blockArr }) {
   //몇번째 블럭인지 상태값 필요
-  const [blockArr, setBlockArr] = useState([
-    {
-      id: 0,
-    },
-    {
-      id: 1,
-    },
-    {
-      id: 2,
-    },
-    {
-      id: 3,
-    },
-    {
-      id: 4,
-    },
-    {
-      id: 5,
-    },
-  ]);
-
-  const [blockArr2, setBlockArr2] = useState([
-    {
-      id0: 0,
-      id1: 0,
-      id2: 0,
-      id3: 0,
-      id4: 0,
-      id5: 0,
-    },
-  ]);
 
   return (
     <WordDiv>
@@ -47,7 +16,15 @@ export default function WordList({ inputWord, count }) {
             <WordBlock>{inputWord[4]}</WordBlock>
             <WordBlock>{inputWord[5]}</WordBlock>
           </Word>
-        ) : null,
+        )
+        : <Word key={item.id}>
+              <WordBlock>{item.test && item.test[0]}</WordBlock>
+              <WordBlock>{item.test && item.test[1]}</WordBlock>
+              <WordBlock>{item.test && item.test[2]}</WordBlock>
+              <WordBlock>{item.test && item.test[3]}</WordBlock>
+              <WordBlock>{item.test && item.test[4]}</WordBlock>
+              <WordBlock>{item.test && item.test[5]}</WordBlock>
+            </Word>
       )}
       {/*<Word>*/}
       {/*  <WordBlock></WordBlock>*/}

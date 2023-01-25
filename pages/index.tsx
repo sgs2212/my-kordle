@@ -6,23 +6,60 @@ import keypad from '../shared/json/keypad.json';
 
 export default function Home() {
   const [inputWord, setInputWord] = useState([]);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
+    const [blockArr, setBlockArr] = useState([
+        {
+            id: 0,
+            test:[]
+        },
+        {
+            id: 1,
+            test:[]
+        },
+        {
+            id: 2,
+            test:[]
+        },
+        {
+            id: 3,
+            test:[]
+        },
+        {
+            id: 4,
+            test:[]
+        },
+        {
+            id: 5,
+        },
+    ]);
 
   const handleInputWord = (e) => {
     setInputWord([...inputWord, e.target.dataset.val]);
   };
 
-  useEffect(() => {
-    console.log(inputWord);
-  }, [inputWord]);
+  const handleAddWord = (e) => {
+      let copyArr = [...blockArr];
+
+      copyArr[count] = {...copyArr[count], test:[...inputWord]}
+
+      setBlockArr(copyArr);
+      setCount(count+1);
+      setInputWord([]);
+  }
+
+  useEffect(()=>{
+
+      console.log(blockArr);
+  },[blockArr])
+
 
   return (
     <>
-      <WordList inputWord={inputWord} count={count} />
+      <WordList inputWord={inputWord} count={count} blockArr={blockArr} />
       <TextDiv>
         <Text>test</Text>
       </TextDiv>
-      <KeyboardList handleInputWord={handleInputWord} />
+      <KeyboardList handleInputWord={handleInputWord} handleAddWord={handleAddWord} inputWord={inputWord} />
     </>
   );
 }
