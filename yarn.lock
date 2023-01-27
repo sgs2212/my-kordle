@@ -1284,6 +1284,11 @@
   dependencies:
     "duplexer" "^0.1.2"
 
+"hangul-js@^0.2.6":
+  "integrity" "sha512-48axU8LgjCD30FEs66Xc04/8knxMwCMQw0f67l67rlttW7VXT3qRJgQeHmhiuGwWXGvSbk6YM0fhQlcjE1JFQA=="
+  "resolved" "https://registry.npmjs.org/hangul-js/-/hangul-js-0.2.6.tgz"
+  "version" "0.2.6"
+
 "has-bigints@^1.0.1", "has-bigints@^1.0.2":
   "integrity" "sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ=="
   "resolved" "https://registry.npmjs.org/has-bigints/-/has-bigints-1.0.2.tgz"
